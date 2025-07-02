@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <v-info v-bind:text="state.text"  v-bind:list="state.list" />
+    <v-info :product="state.product" v-bind:text="state.text"  v-bind:list="state.list" />
     <v-text v-bind:text="state.text" v-on:updateText="updateText" /> 
     <v-list
       v-bind:list="state.list" 
@@ -16,6 +16,7 @@ import VInfo from './components/info.vue'
 import VText from './components/text.vue'
 import VList from './components/list.vue';
 const state = reactive({
+  product: '水果订单',
   text: '环城东路888号',
   list: [
     { name: '苹果', price: 20, count: 0 },

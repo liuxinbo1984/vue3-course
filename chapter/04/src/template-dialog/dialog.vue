@@ -1,10 +1,10 @@
 <template>
-  <div v-if="props.show" class="v-dialog-mask">
-    <div class="v-dialog">
-      <div class="v-dialog-text">
+  <div v-if="props.show" class="v-dialog-mask">   <!-- 遮罩层 -->
+    <div class="v-dialog">                        <!-- 对话框根层 -->
+      <div class="v-dialog-text">                 <!-- 对话框内容层：文本 -->
         {{props.text}}
       </div>
-      <div class="v-dialog-footer">
+      <div class="v-dialog-footer">               <!-- 对话框内容层：动作 -->
         <button class="v-dialog-btn" @click="onOk">确定</button>
       </div>
     </div>
@@ -67,5 +67,9 @@ const onOk = () => {
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.v-dialog-btn:hover {
+  background-color: #69aee6;
 }
 </style>

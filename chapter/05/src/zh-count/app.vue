@@ -13,6 +13,9 @@ function countZhText(txt) {
   const zhRegExp = /[\u4e00-\u9fa5]{1,}/g;
   const zhList = txt.match(zhRegExp);
   let count = 0;
+  if (!zhList) { // 需要判空
+    return count;
+  }
   zhList.forEach((item) => {
     count += item.length;
   });
@@ -29,6 +32,7 @@ watch(
   [() => state.text ],
   ([ text ], [ prevText ]) => {
     // 当监听到state.text 变化，就会触发这个回调函数
+    console.log(`new: ${text}, old: ${prevText}`)
     state.zhCount = countZhText(text);
   }
 )

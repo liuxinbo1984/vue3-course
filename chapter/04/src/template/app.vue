@@ -15,5 +15,6 @@ import Counter from './counter.vue'
   margin: 10px auto;
   box-shadow: 0px 0px 9px #00000066;
   text-align: center;
+  border-radius: .5em;
 }
 </style>

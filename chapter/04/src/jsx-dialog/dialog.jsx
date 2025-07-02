@@ -1,8 +1,10 @@
 import { defineComponent, reactive, createApp, h, toRaw } from 'vue';
+import {PropTypes} from 'vue'
 
 const Dialog = defineComponent({
   props: {
     text: String,
+    onOk: Function
   },
   emits: [ 'onOk' ],
   setup(props, context) {
@@ -35,17 +37,17 @@ const Dialog = defineComponent({
   }
 });
 
-
-
+// 动态添加: 
 export function createDialog(params = {}) {
   const dom = document.createElement('div');
   const body = document.querySelector('body');
   body.appendChild(dom);
   const app = createApp({
     render() {
+      console.log(params)
       return h(Dialog, {
         text: params.text,
-        onOnOk: params.onOk
+        onOk: params.onOk
       })
     }
   });

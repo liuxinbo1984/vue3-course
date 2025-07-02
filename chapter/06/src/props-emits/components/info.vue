@@ -1,6 +1,6 @@
 <template>
   <div class="v-info">
-    <div>订单信息：</div>
+    <div>订单信息：{{ props.product }}</div>
     <div>收货地址：{{props.text}}</div>
     <div>总金额：<span class="v-info-value">{{totalPrice}}</span></div>
   </div>
@@ -9,18 +9,21 @@
 <script setup>
   import { ref, watch } from 'vue';
   const props = defineProps({
+    product: String,
     text: String,
     list: Array,
   });
   const totalPrice = ref(0);
+
   watch(props, () => {
     const list = props.list;
     let total = 0;
     list.forEach((item) => {
-      total += item.price * item.count;
+      total += item.price * item.count
     });
     totalPrice.value = total;
-  })
+  }, {deep: true})
+
 </script>
 
 <style>

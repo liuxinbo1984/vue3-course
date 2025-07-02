@@ -38,9 +38,14 @@ const onClick = () => {
 }
 .app .btn {
   font-size: 20px;
-  padding: 0 10px;
+  padding: 2px 10px;
   height: 32px;
   min-width: 80px;
   cursor: pointer;
+  border: none;
+  border-radius: .2em;
+  box-shadow: 0 0 3px #000;
+  background-color: rgb(29, 127, 203);
+  color: #fff;
 } 
 </style>

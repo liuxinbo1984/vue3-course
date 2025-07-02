@@ -5,8 +5,9 @@ import Module03 from './module03.vue';
 import Module04 from './module04.vue';
 
 const App = defineComponent({
-
-  setup() {
+  props: {},
+  components: {},
+  setup(props, cxt) {
     const isReverse = ref(false);
     const onClick = () => {
       isReverse.value = !isReverse.value;

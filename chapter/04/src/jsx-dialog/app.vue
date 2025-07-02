@@ -15,6 +15,7 @@ const onClickOpenDialog = () => {
   const dialog = createDialog({
     text: `温馨提示，这是第${showCount.value}次打开对话框`,
     onOk: () => {
+      console.log('app ---')
       dialog.close();
     }
   });

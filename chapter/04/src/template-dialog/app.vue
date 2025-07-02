@@ -2,10 +2,11 @@
   <div class="app">
     <button class="btn" @click="onClickOpenDialog" >打开对话框</button>
   </div>
+  <!-- @onOk 控件事件响应 -->
   <Dialog 
     :show="showDialog" 
     :text="showText"
-    @onOk="onDialogOk"
+    @onOk="onDialogOk"     
   />
 </template>
 
@@ -20,6 +21,8 @@ const onClickOpenDialog = () => {
   showCount.value += 1;
   showText.value = `温馨提示，这是第${showCount.value}次打开对话框`
 }
+
+// 时间回调
 const onDialogOk = () => {
   showDialog.value = false;
 }
